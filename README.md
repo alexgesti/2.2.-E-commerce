@@ -58,25 +58,25 @@ A continuación puedes ver algunas capturas de la aplicación en funcionamiento:
 - Pantalla principal de la tienda con todos los productos visibles.
 
 <p align="center">
-  <img src="./images/readme/example_1.png" alt="Demo 1" width="250"/>
+  <img src="./images/readme/example_1.png" alt="Demo 1" width="450"/>
 </p>
 
 - Funcionalidad de zoom al pasar el cursor por encima de una imagen de producto.
 
 <p align="center">
-   <img src="./images/readme/example_zoom.png" alt="Demo 2" width="250"/>
+   <img src="./images/readme/example_zoom.png" alt="Demo 2" width="450"/>
 </p>
 
 - Vista del carrito de compras, con opciones para aumentar o disminuir la cantidad.
 
 <p align="center">
-   <img src="./images/readme/example_card.png" alt="Demo 3" width="250"/>
+   <img src="./images/readme/example_card.png" alt="Demo 3" width="450"/>
 </p>
 
 - Pantalla de checkout donde se piden los datos del usuario antes de finalizar la compra.
 
 <p align="center">
-   <img src="./images/readme/example_checkout.png" alt="Demo 4" width="250"/>
+   <img src="./images/readme/example_checkout.png" alt="Demo 4" width="450"/>
 </p>
 
 ## 👤 Autor
