@@ -1,6 +1,6 @@
 # 2.2.-E-commerce
 
-# 📄 Descripción - Enunciado del ejercicio
+## 📄 Descripción - Enunciado del ejercicio
 
 Este proyecto simula una tienda online donde el usuario puede añadir productos al carrito, aplicar promociones y realizar una compra ficticia. El objetivo es practicar JavaScript manipulando el DOM, eventos y validación de formularios en un entorno realista.
 
