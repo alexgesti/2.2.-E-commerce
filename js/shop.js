@@ -46,19 +46,19 @@ const products = [
   },
   {
     id: 7,
-    name: "Lawn Dress",
+    name: "Majora's Mask Shirt",
     price: 15,
     type: "clothes",
   },
   {
     id: 8,
-    name: "Lawn-Chiffon Combo",
+    name: "Mimikyu Hoodie",
     price: 19.99,
     type: "clothes",
   },
   {
     id: 9,
-    name: "Toddler Frock",
+    name: "Cappy Hat",
     price: 9.99,
     type: "clothes",
   },
@@ -136,7 +136,7 @@ const printCart = () => {
     cartList.innerHTML += `
       <tr>
         <th>${item.name}</th>
-        <td>$${item.price.toFixed(2)}</td>
+        <td class="text-center align-middle">$${item.price.toFixed(2)}</td>
         <td class="text-center align-middle">
           <div class="d-flex justify-content-center align-items-center gap-2 flex-nowrap">
             <button class="btn btn-danger btn-sm ms-2 remove-from-cart" data-product-id="${
@@ -148,7 +148,7 @@ const printCart = () => {
             }"> <i class="fas fa-plus"></i></button>
           </div>
         </td>
-        <td>$${subtotal}</td>
+        <td class="text-center align-middle">$${subtotal}</td>
       </tr>
     `;
   }
@@ -212,6 +212,41 @@ window.addEventListener("DOMContentLoaded", () => {
       const id = parseInt(this.getAttribute("data-product-id"));
       buy(id);
       printCart();
+    });
+  });
+
+  // Extra
+  // Zoom de imagen de producto
+  document.querySelectorAll(".product-card img").forEach((img) => {
+    img.style.cursor = "zoom-in";
+    img.addEventListener("click", function (e) {
+      // Crear overlay
+      const overlay = document.createElement("div");
+      overlay.className = "product-zoom-overlay";
+
+      // Contenedor interno
+      const zoomBox = document.createElement("div");
+      zoomBox.className = "zoom-box";
+
+      // Crear texto de zoom
+      const zoomText = document.createElement("p");
+      zoomText.textContent = this.alt;
+      zoomText.className = "zoom-text";
+      zoomBox.appendChild(zoomText);
+
+      // Crear imagen ampliada
+      const zoomImg = document.createElement("img");
+      zoomImg.src = this.src;
+      zoomImg.alt = this.alt;
+      zoomBox.appendChild(zoomImg);
+
+      overlay.appendChild(zoomBox);
+      document.body.appendChild(overlay);
+
+      // Cerrar overlay
+      overlay.addEventListener("click", () => {
+        overlay.remove();
+      });
     });
   });
 });
