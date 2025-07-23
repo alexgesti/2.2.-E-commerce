@@ -51,6 +51,8 @@ Para ejectuar este proyecto, se necesita:
 2. Si usas Live Server, haz clic derecho en `index.html` y selecciona "Open with Live Server".
 3. ¡Listo! Ya puedes navegar por la tienda, añadir productos al carrito y probar la validación del checkout.
 
+---
+
 ## 🖼️ Demo
 
 A continuación puedes ver algunas capturas de la aplicación en funcionamiento:
@@ -78,6 +80,8 @@ A continuación puedes ver algunas capturas de la aplicación en funcionamiento:
 <p align="center">
    <img src="./images/readme/example_checkout.png" alt="Demo 4" width="450"/>
 </p>
+
+---
 
 ## 👤 Autor
 
