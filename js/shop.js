@@ -79,14 +79,10 @@ const buy = (id) => {
   if (!product) return; // Si no existe, no hacemos nada
 
   // Check if the product is already in the cart
-  const existingProduct = cart.find((item) => item.id === id);
-  if (existingProduct) {
-    // If it exists, increase the quantity
-    existingProduct.quantity += 1;
-  } else {
-    // If it doesn't exist, add it to the cart with quantity 1
-    cart.push({ ...product, quantity: 1 });
-  }
+  const itemInCart = cart.find((item) => item.id === id);
+  itemInCart ? itemInCart.quantity++ : cart.push({ ...product, quantity: 1 });
+  // If it exists, increase the quantity
+  // If it doesn't exist, add it to the cart with quantity 1
 };
 
 // Exercise 2
@@ -124,16 +120,16 @@ const printCart = () => {
   const cartList = document.getElementById("cart_list");
   const totalPrice = document.getElementById("total_price");
   const countProduct = document.getElementById("count_product");
-  cartList.innerHTML = "";
 
   let totalItems = 0;
 
-  for (const item of cart) {
-    const discountedPrice = applyPromotionsCart(item);
-    const subtotal = (discountedPrice * item.quantity).toFixed(2);
-    totalItems += item.quantity;
+  const cartHTML = cart
+    .map((item) => {
+      const discountedPrice = applyPromotionsCart(item);
+      const subtotal = (discountedPrice * item.quantity).toFixed(2);
+      totalItems += item.quantity;
 
-    cartList.innerHTML += `
+      return `
       <tr>
         <th>${item.name}</th>
         <td class="text-center align-middle">$${item.price.toFixed(2)}</td>
@@ -151,10 +147,11 @@ const printCart = () => {
         <td class="text-center align-middle">$${subtotal}</td>
       </tr>
     `;
-  }
+    })
+    .join("");
 
+  cartList.innerHTML = cartHTML;
   totalPrice.textContent = calculateTotal().toFixed(2);
-
   countProduct.textContent = totalItems;
 
   // Subtract quantity of products from cart
